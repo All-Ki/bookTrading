@@ -1,0 +1,10 @@
+
+    <div masonry column-width ="200" item-selector=".displayimg">
+       <div masonry-brick ng-click='showBook(book)' class='displayimg' ng-repeat='book in books'>
+         <img fallback-src class='brickImg' ng-src='{{book.thumb}}' />
+       </div>
+</div>
+
+<div ng-repeat='n in [] | pageRange:numberOfPages'id='pagesCount'>
+  <a ng-click = 'getBooksAtPage(n)'> {{n}}</a>
+</div>

@@ -1,0 +1,38 @@
+<div id='header' ng-controller='headerController'>
+  <nav class="navbar navbar-inverse navbar-toggleable-md">
+    <button class="navbar-toggle navbar-toggler-right" type="button"
+    data-toggle="collapse" data-target="#HeaderCollapse"
+   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="navbar-brand" href="#">Home</a>
+
+    <div class="collapse navbar-collapse" id="HeaderCollapse">
+     <div class="navbar-header">
+      </div>
+      <ul class="nav navbar-nav mr-auto" ng-switch='user'>
+        <li ng-switch-when='undefined'>
+          <a class='nav-link' href='/auth/twitter'> LOGIN WITH TWITTER </a>
+        </li>
+        <li ng-switch-default>
+          <ul class="nav navbar-nav" >
+            <li>
+              <a class='nav-link' href='#!/user'>  {{user.displayName}}</a>
+            </li>
+            <li>
+              <a class='nav-link' href='#!/trades'>Trades</a>
+            </li>
+            <li>
+              <a class='nav-link' href='#!/settings'> Account settings</a>
+            </li>
+
+
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+</div>

@@ -1,0 +1,58 @@
+
+<b>
+{{user.displayName}}
+
+</b>
+
+<ul style='float : right; text-align : right'>
+
+  <li>
+
+
+    State : {{user.state || "not known"}}
+  </li>
+  <li>
+
+    City : {{user.city || "not known"}}
+  </li>
+</ul>
+<br/>
+
+<div masonry class='masonry' column-width="200" masonry-options="{fitWidth: true}" item-selector=".displayimg">
+  <div ng-repeat='book in user.books'>
+
+    <div masonry-brick ng-click='showTradePanel($event,book)' class='displayimg'>
+      <img class='brickImg' ng-src='{{book.thumb}}' />
+
+    </div>
+  </div>
+
+
+</div>
+
+<div id='tradePanel' ng-show="tradePanelToggle">
+  <div id='tradePanelBookPreview'>
+    You want :
+    <img class = 'tradePanelBookPreviewThumb' ng-src='{{targetBook.thumb}}' />
+  </div>
+  <div >
+    Select a book to trade:
+  </div>
+
+  <button ng-click='closeTradePanel()' class='topRight'> X </button>
+
+  <div class='panel-masonry'>
+
+    <div masonry class='masonry' column-width="150" item-selector=".panelCtn">
+      <div ng-repeat='book in loggedUser.books'>
+
+        <div masonry-brick ng-click='requestTrade(book)' class='panelCtn'>
+          <img fallback-src class='brickImg panelImg' ng-src='{{book.thumb}}' />
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

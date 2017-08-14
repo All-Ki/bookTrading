@@ -1,0 +1,89 @@
+.settingsInput {
+  width: 100%;
+}
+.navbar-toggle{
+  border-color: none;
+  background-color: lightgrey;
+  background-image: url('toggleIcon.png')
+
+}
+.navbar-toggle:focus{
+  background-color: grey!important;
+
+}
+.navbar-toggle:hover{
+  background-color: grey!important;
+
+}
+.displayimg {
+  padding: 5px;
+  border-width: 5px;
+  background-color: lightgrey;
+  position: relative;
+}
+
+.topLeft {
+  position: absolute;
+  top 0;
+  left: 0;
+}
+
+.topRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.bottomRight {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+#pagesCount{
+  position: fixed;
+  text-align: center;
+  width:100%;
+  bottom: 10px;
+  background-color: black
+}
+.panelImg {
+  margin-left: 5px;
+  margin-top: 5px;
+  margin: 5px;
+
+  border-width: 5px;
+  border-color: lightgrey
+}
+
+.panel-masonry {
+  overflow: scroll;
+  height: 100%;
+}
+
+.tradePanelBookPreviewThumb {
+  width: 100%;
+  max-width : 150px;
+}
+
+#tradePanelBookPreview {
+  border-width: 5px;
+  top: 0px;
+  border-style: solid;
+  border-color: lightgrey;
+  background-color: lightgrey;
+  position: absolute;
+  width: 35%;
+  left: -35%;
+}
+
+#tradePanel {
+  resize : none;
+  background-color: lightgrey;
+  position: absolute;
+  width: 50%;
+  max-width: 70%;
+  height : 40%;
+  max-height: 80%;
+  top: 5%;
+  left: 25%;
+}

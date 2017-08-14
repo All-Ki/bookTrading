@@ -1,0 +1,22 @@
+{
+  "name": "pinterestier",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Blake Johnston"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "angular-masonry": "^0.17.0",
+    "angular-img-fallback": "^0.2.0"
+  }
+}

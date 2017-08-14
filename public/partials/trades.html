@@ -1,0 +1,109 @@
+<uib-tabset>
+  <uib-tab index='0' heading="Trades from me">
+    <div ng-repeat='trade in trades.askedTrades' style="position : relative">
+      <ul class="topRight" style="list-style-type:none;">
+
+
+        <li> <button type='button' class='' ng-click="cancelTrade(trade._id)">
+            Cancel trade</button>
+        </li>
+        <li>
+          <div ng-switch="trade.accepted">
+            <div ng-switch-when='true' ng-hide='trade.fullfilledByTarget'>
+              <button type='button' class='' ng-click="fullfillTrade(trade._id)">
+                  Received his book</button>
+            </div>
+
+          </div>
+        </li>
+      </ul>
+      <div>
+        <span style='float: left; top : 20px;'>
+        <ul style='list-style-type : none ; padding : 0 ; vertical-align : center'>
+          <li>
+            Accepted : {{trade.accepted}}
+          </li>
+          <li>
+            Fullfilled by you : {{trade.fullfilledByAsker}}
+          </li>
+          <li>
+            Fullfilled by the target : {{trade.fullfilledByTarget}}
+          </li>
+        </ul>
+
+        </span>
+        <span>
+        <span>
+You asked for :
+<img ng-src='{{trade.askedBook.thumb}}' />
+          </span>
+
+        </span>
+        <span>
+          You offered :
+        </span>
+        <img ng-src='{{trade.offeredBook.thumb}}' />
+
+      </div>
+      <br/>
+
+    </div>
+  </uib-tab>
+
+
+  <uib-tab index='1' heading="Trades to me">
+    <div ng-repeat='trade in trades.pendingTrades' style='position : relative'>
+      <ul class="topRight" style="list-style-type:none;">
+
+
+        <li> <button type='button' class='' ng-click="cancelTrade(trade._id)">
+      Cancel trade</button>
+        </li>
+        <li>
+          <div ng-switch="trade.accepted">
+            <div ng-switch-when='true'>
+              <button type='button' class=''  ng-hide='trade.fullfilledByAsker' ng-click="fullfillTrade(trade._id)">
+            Received his book</button>
+            </div>
+            <div ng-switch-default>
+              <button type='button' class='' ng-click="acceptTrade(trade._id)">
+          Accept trade</button>
+            </div>
+
+          </div>
+        </li>
+      </ul>
+
+      <div>
+        <span style='float: left; top : 20px;'>
+        <ul style='list-style-type : none ; padding : 0 ; vertical-align : center'>
+          <li>
+            Accepted : {{trade.accepted}}
+          </li>
+          <li>
+            Fullfilled by you : {{trade.fullfilledByTarget}}
+          </li>
+          <li>
+            Fullfilled by the target : {{trade.fullfilledByAsker}}
+          </li>
+        </ul>
+
+        </span>
+
+        <span style=''>
+          You asked for :
+
+        <img ng-src='{{trade.askedBook.thumb}}' />
+        </span>
+        <span>
+          You offered :
+        </span>
+        <img ng-src='{{trade.offeredBook.thumb}}' />
+
+
+      </div>
+      <br/>
+  </uib-tab>
+
+
+</uib-tabset>

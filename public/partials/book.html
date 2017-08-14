@@ -1,0 +1,35 @@
+<ul style='list-style-type : none ; padding : 0'>
+
+
+    <li style = 'background-color : lightgrey ; padding : 15px; border-radius : 5%'><img ng-src="{{book.volumeInfo.imageLinks.smallThumbnail}}" /></td>
+    <td>
+      <ul style = 'float : right; list-style-type : none'>
+
+        <li>
+
+          {{book.volumeInfo.title}}<br /></li>
+        <li>
+
+          By: {{book.volumeInfo.authors | formatFilter}}<br />
+        </li>
+        <li>
+
+          Published: {{book.volumeInfo.publisher}}, {{book.volumeInfo.publishedDate | dateFilter}}
+        </li>
+      </ul>
+    </td>
+  </li>
+
+  <br />
+  <li>
+    Users having this book :
+  </li>
+
+  <br />
+  <ul>
+    <li ng-repeat='user in users'>
+    <a ng-href='#!/user/{{user._id}}'>{{user.displayName}}</a>
+  </li>
+</ul>
+
+</ul>
