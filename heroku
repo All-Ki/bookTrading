@@ -1,0 +1,6 @@
+TWITTER_KEY=OiyIuzxMmqFoHEUrwnyy9rQtr
+TWITTER_SECRET=v69wFJCzrOs3oMw5L4mjkdg1SyCUeA9JNUrIJypvtLGd1QV7jO
+MONGO_URI=mongodb://localhost:27017/books
+PORT=8080
+APP_URL=http://localhost:8080/
+-- Suite (100%) -- 
